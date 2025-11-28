@@ -1,14 +1,34 @@
 <div align="center">
-    <br><a href="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/actions/workflows/binary.yml"><img alt="Build" src="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/actions/workflows/binary.yml/badge.svg"></a> <a href="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/lincolnpauldev-Eng/robin-dark-web-osint"></a> <a href="https://hub.docker.com/r/lincolnpauldev/robin"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lincolnpauldev/robin"></a>
-    <h1>🕵️ Robin: AI-Powered Dark Web OSINT Tool</h1>
+    <br>
+    <a href="https://github.com/lincolnpaul-deveng/cripper/actions/workflows/binary.yml"><img alt="Build" src="https://github.com/lincolnpaul-deveng/cripper/actions/workflows/binary.yml/badge.svg"></a>
+    <a href="https://github.com/lincolnpaul-deveng/cripper/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/lincolnpaul-deveng/cripper"></a>
+    <a href="https://hub.docker.com/r/lincolnpaul-deveng/cripper"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lincolnpaul-deveng/cripper"></a>
+    <br><br>
 
-    <p><strong>Terminal-style dark web investigation tool with AI-powered intelligence gathering</strong></p>
-    <p>Robin leverages LLMs to refine queries, filter results from dark web search engines, and generate contextual intelligence summaries with an authentic cyberpunk terminal interface.</p>
-    <a href="#features">Features</a> &bull; <a href="#installation">Installation</a> &bull; <a href="#usage">Usage</a> &bull; <a href="#contributing">Contributing</a><br><br>
+    <h1>🖥️ <span style="color: #00FF41;">Cripper</span>: Dark Web OSINT Terminal</h1>
+
+    <p><strong>⚡ AI-Powered Dark Web Intelligence Gathering</strong></p>
+    <p>Advanced terminal interface for conducting OSINT investigations on dark web networks with LLM-driven analysis and cyberpunk aesthetics</p>
+
+    <table>
+        <tr>
+            <td align="center">
+                <img src="screen_ui.png" alt="Terminal Interface" width="400"/>
+                <br><sub><b>Dark Web Terminal UI</b></sub>
+            </td>
+            <td align="center">
+                <img src="workflow.png" alt="Investigation Workflow" width="400"/>
+                <br><sub><b>AI Investigation Pipeline</b></sub>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="#features"><img src="https://img.shields.io/badge/Features-View-00FF41?style=for-the-badge&logo=github"></a>
+    <a href="#installation"><img src="https://img.shields.io/badge/Installation-Get_Started-FF0040?style=for-the-badge&logo=docker"></a>
+    <a href="#usage"><img src="https://img.shields.io/badge/Usage-Terminal-000000?style=for-the-badge&logo=linux"></a>
+    <br><br>
 </div>
-
-![Terminal Interface](screen_ui.png)
-![Investigation Workflow](workflow.png)
 
 ---
 
@@ -31,7 +51,7 @@
 >
 > Use responsibly and at your own risk. Ensure you comply with all relevant laws and institutional policies before conducting OSINT investigations.
 >
-> Additionally, Robin leverages third-party APIs (including LLMs). Be cautious when sending potentially sensitive queries, and review the terms of service for any API or model provider you use.
+> Additionally, Cripper leverages third-party APIs (including LLMs). Be cautious when sending potentially sensitive queries, and review the terms of service for any API or model provider you use.
 
 ## Installation
 > [!NOTE]
@@ -44,9 +64,9 @@
 
 ### Docker (Web UI Mode) [Recommended]
 
-- Pull the latest Robin docker image
+- Pull the latest Cripper docker image
 ```bash
-docker pull lincolnpauldev/robin:latest
+docker pull lincolnpaul-deveng/cripper:latest
 ```
 
 - Run the docker image as:
@@ -55,12 +75,12 @@ docker run --rm \
    -v "$(pwd)/.env:/app/.env" \
    --add-host=host.docker.internal:host-gateway \
    -p 8501:8501 \
-   lincolnpauldev/robin:latest ui --ui-port 8501 --ui-host 0.0.0.0
+   cripper ui --ui-port 8501 --ui-host 0.0.0.0
 ```
 
 ### Release Binary (CLI Mode)
 
-- Download the appropriate binary for your system from the [latest release](https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/releases/latest)
+- Download the appropriate binary for your system from the [latest release](https://github.com/lincolnpaul-deveng/cripper/releases/latest)
 - Unzip the file, make it executable
 ```bash
 chmod +x robin
@@ -89,12 +109,12 @@ Launch the dark web terminal interface:
 ```bash
 python main.py ui
 # Or via Docker
-docker run -p 8501:8501 lincolnpauldev/robin:latest ui
+docker run -p 8501:8501 cripper ui
 ```
 
 ### CLI Mode
 ```bash
-Robin: AI-Powered Dark Web OSINT Tool
+Cripper: AI-Powered Dark Web OSINT Tool
 
 options:
   -h, --help            show this help message and exit
@@ -140,8 +160,9 @@ Open an Issue for any of these situations:
 - **Original Concept**: Inspired by [Thomas Roccia](https://x.com/fr0gger_) and his demo of [Perplexity of the Dark Web](https://x.com/fr0gger_/status/1908051083068645558)
 - **Core Architecture**: Based on [apurvsinghgautam/robin](https://github.com/apurvsinghgautam/robin) - the original AI-powered dark web OSINT tool
 - **OSINT Framework**: LLM prompt inspiration from [OSINT-Assistant](https://github.com/AXRoux/OSINT-Assistant) repository
-- **Terminal UI Design**: Cyberpunk aesthetics and dark web styling by [Lincoln Paul](https://github.com/lincolnpauldev-Eng)
+- **Terminal UI Design**: Cyberpunk aesthetics and dark web styling by [Lincoln Paul](https://github.com/lincolnpaul-deveng)
 - **Workflow Visualization**: Process diagrams by [Chintan Gurjar](https://www.linkedin.com/in/chintangurjar)
+- **Project Lead**: [Lincoln Paul](https://github.com/lincolnpaul-deveng) - Cripper development and maintenance
 - **Community**: Thanks to all contributors and the cybersecurity research community
 
 
