@@ -86,7 +86,8 @@ _llm_config_map = {
         'constructor_params': {
             'model_name': 'openai/gpt-5.1',
             'base_url': OPENROUTER_BASE_URL,
-            'api_key': OPENROUTER_API_KEY  # Use OpenRouter API key
+            'api_key': OPENROUTER_API_KEY,  # Use OpenRouter API key
+            'max_tokens': 4000
         }
     },
     'gpt-5-mini-openrouter': {
@@ -94,7 +95,8 @@ _llm_config_map = {
         'constructor_params': {
             'model_name': 'openai/gpt-5-mini',
             'base_url': OPENROUTER_BASE_URL,
-            'api_key': OPENROUTER_API_KEY  # Use OpenRouter API key
+            'api_key': OPENROUTER_API_KEY,  # Use OpenRouter API key
+            'max_tokens': 4000
         }
     },
     'claude-sonnet-4.5-openrouter': {
@@ -102,7 +104,8 @@ _llm_config_map = {
         'constructor_params': {
             'model_name': 'anthropic/claude-sonnet-4.5',
             'base_url': OPENROUTER_BASE_URL,
-            'api_key': OPENROUTER_API_KEY  # Use OpenRouter API key
+            'api_key': OPENROUTER_API_KEY,  # Use OpenRouter API key
+            'max_tokens': 4000
         }
     },
     'grok-4.1-fast-openrouter': {
@@ -110,7 +113,8 @@ _llm_config_map = {
         'constructor_params': {
             'model_name': 'x-ai/grok-4.1-fast',
             'base_url': OPENROUTER_BASE_URL,
-            'api_key': OPENROUTER_API_KEY  # Use OpenRouter API key
+            'api_key': OPENROUTER_API_KEY,  # Use OpenRouter API key
+            'max_tokens': 4000
         }
     },
     # 'llama3.2': {

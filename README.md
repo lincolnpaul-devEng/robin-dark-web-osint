@@ -1,26 +1,28 @@
 <div align="center">
-   <img src=".github/assets/logo.png" alt="Logo" width="300">
-   <br><a href="https://github.com/apurvsinghgautam/robin/actions/workflows/binary.yml"><img alt="Build" src="https://github.com/apurvsinghgautam/robin/actions/workflows/binary.yml/badge.svg"></a> <a href="https://github.com/apurvsinghgautam/robin/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/apurvsinghgautam/robin"></a> <a href="https://hub.docker.com/r/apurvsg/robin"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/apurvsg/robin"></a>
-   <h1>Robin: AI-Powered Dark Web OSINT Tool</h1>
+    <br><a href="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/actions/workflows/binary.yml"><img alt="Build" src="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/actions/workflows/binary.yml/badge.svg"></a> <a href="https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/lincolnpauldev-Eng/robin-dark-web-osint"></a> <a href="https://hub.docker.com/r/lincolnpauldev/robin"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lincolnpauldev/robin"></a>
+    <h1>🕵️ Robin: AI-Powered Dark Web OSINT Tool</h1>
 
-   <p>Robin is an AI-powered tool for conducting dark web OSINT investigations. It leverages LLMs to refine queries, filter search results from dark web search engines, and provide an investigation summary.</p>
-   <a href="#installation">Installation</a> &bull; <a href="#usage">Usage</a> &bull; <a href="#contributing">Contributing</a> &bull; <a href="#acknowledgements">Acknowledgements</a><br><br>
+    <p><strong>Terminal-style dark web investigation tool with AI-powered intelligence gathering</strong></p>
+    <p>Robin leverages LLMs to refine queries, filter results from dark web search engines, and generate contextual intelligence summaries with an authentic cyberpunk terminal interface.</p>
+    <a href="#features">Features</a> &bull; <a href="#installation">Installation</a> &bull; <a href="#usage">Usage</a> &bull; <a href="#contributing">Contributing</a><br><br>
 </div>
 
-![Demo](.github/assets/screen.png)
-![Demo](.github/assets/screen-ui.png)
-![Workflow](.github/assets/robin-workflow.png)
+![Terminal Interface](screen_ui.png)
+![Investigation Workflow](workflow.png)
 
 ---
 
 ## Features
 
-- ⚙️ **Modular Architecture** – Clean separation between search, scrape, and LLM workflows.
-- 🤖 **Multi-Model Support** – Easily switch between OpenAI, Claude, Gemini or local models like Ollama.
-- 💻 **CLI-First Design** – Built for terminal warriors and automation ninjas.
-- 🐳 **Docker-Ready** – Optional Docker deployment for clean, isolated usage.
-- 📝 **Custom Reporting** – Save investigation output to file for reporting or further analysis.
-- 🧩 **Extensible** – Easy to plug in new search engines, models, or output formats.
+- 🖥️ **Dark Web Terminal UI** – Authentic cyberpunk interface with matrix-style aesthetics, ASCII art, and terminal commands
+- ⚙️ **Modular Architecture** – Clean separation between search, scrape, and LLM workflows with concurrent processing
+- 🤖 **Multi-Model LLM Support** – OpenAI, Claude, Gemini, Ollama, and OpenRouter models with optimized token limits
+- 💻 **CLI & Web Interface** – Terminal-first design with Streamlit web UI for interactive investigations
+- 🐳 **Docker-Ready** – Containerized deployment with Tor integration for isolated dark web access
+- 🔍 **Advanced Intelligence** – AI-powered query refinement, result filtering, and contextual analysis
+- 📊 **Investigation Reports** – Structured markdown outputs with artifacts, insights, and next steps
+- 🛡️ **API Optimization** – Smart token management to prevent credit limit issues
+- 🌐 **Tor Integration** – Automatic SOCKS proxy configuration for anonymous dark web access
 
 ---
 
@@ -44,7 +46,7 @@
 
 - Pull the latest Robin docker image
 ```bash
-docker pull apurvsg/robin:latest
+docker pull lincolnpauldev/robin:latest
 ```
 
 - Run the docker image as:
@@ -53,20 +55,20 @@ docker run --rm \
    -v "$(pwd)/.env:/app/.env" \
    --add-host=host.docker.internal:host-gateway \
    -p 8501:8501 \
-   apurvsg/robin:latest ui --ui-port 8501 --ui-host 0.0.0.0
+   lincolnpauldev/robin:latest ui --ui-port 8501 --ui-host 0.0.0.0
 ```
 
 ### Release Binary (CLI Mode)
 
-- Download the appropriate binary for your system from the [latest release](https://github.com/apurvsinghgautam/robin/releases/latest)
-- Unzip the file, make it executable 
+- Download the appropriate binary for your system from the [latest release](https://github.com/lincolnpauldev-Eng/robin-dark-web-osint/releases/latest)
+- Unzip the file, make it executable
 ```bash
 chmod +x robin
 ```
 
 - Run the binary as:
 ```bash
-robin cli --model gpt-4.1 --query "ransomware payments"
+robin cli --model gpt-5-mini-openrouter --query "ransomware payments"
 ```
 
 ### Using Python (Development Version)
@@ -82,13 +84,22 @@ python main.py -m gpt-4.1 -q "ransomware payments" -t 12
 
 ## Usage
 
+### Terminal Interface
+Launch the dark web terminal interface:
+```bash
+python main.py ui
+# Or via Docker
+docker run -p 8501:8501 lincolnpauldev/robin:latest ui
+```
+
+### CLI Mode
 ```bash
 Robin: AI-Powered Dark Web OSINT Tool
 
 options:
   -h, --help            show this help message and exit
-  --model {gpt4o,gpt-4.1,claude-3-5-sonnet-latest,llama3.1,gemini-2.5-flash}, -m {gpt4o,gpt-4.1,claude-3-5-sonnet-latest,llama3.1,gemini-2.5-flash}
-                        Select LLM model (e.g., gpt4o, claude sonnet 3.5, ollama models, gemini 2.5 flash)
+  --model {gpt-5.1-openrouter,gpt-5-mini-openrouter,claude-sonnet-4.5-openrouter,grok-4.1-fast-openrouter,gpt-4.1,claude-sonnet-4-5,gemini-2.5-flash}, -m {gpt-5.1-openrouter,gpt-5-mini-openrouter,claude-sonnet-4.5-openrouter,grok-4.1-fast-openrouter,gpt-4.1,claude-sonnet-4-5,gemini-2.5-flash}
+                        Select LLM model (optimized for cost-effective investigations)
   --query QUERY, -q QUERY
                         Dark web search query
   --threads THREADS, -t THREADS
@@ -98,10 +109,10 @@ options:
                         current date and time is used.
 
 Example commands:
- - robin -m gpt4.1 -q "ransomware payments" -t 12
- - robin --model gpt4.1 --query "sensitive credentials exposure" --threads 8 --output filename
- - robin -m llama3.1 -q "zero days"
- - robin -m gemini-2.5-flash -q "zero days"
+  - robin -m gpt-5-mini-openrouter -q "ransomware payments" -t 12
+  - robin --model claude-sonnet-4.5-openrouter --query "sensitive credentials exposure" --threads 8 --output investigation_report
+  - robin -m grok-4.1-fast-openrouter -q "zero-day exploits"
+  - robin -m gemini-2.5-flash -q "dark web markets"
 ```
 
 ---
@@ -126,11 +137,12 @@ Open an Issue for any of these situations:
 
 ## Acknowledgements
 
-- Idea inspiration from [Thomas Roccia](https://x.com/fr0gger_) and his demo of [Perplexity of the Dark Web](https://x.com/fr0gger_/status/1908051083068645558).
-- Tools inspiration from my [OSINT Tools for the Dark Web](https://github.com/apurvsinghgautam/dark-web-osint-tools) repository.
-- LLM Prompt inspiration from [OSINT-Assistant](https://github.com/AXRoux/OSINT-Assistant) repository.
-- Logo Design by my friend [Tanishq Rupaal](https://github.com/Tanq16/)
-- Workflow Design by [Chintan Gurjar](https://www.linkedin.com/in/chintangurjar)
+- **Original Concept**: Inspired by [Thomas Roccia](https://x.com/fr0gger_) and his demo of [Perplexity of the Dark Web](https://x.com/fr0gger_/status/1908051083068645558)
+- **Core Architecture**: Based on [apurvsinghgautam/robin](https://github.com/apurvsinghgautam/robin) - the original AI-powered dark web OSINT tool
+- **OSINT Framework**: LLM prompt inspiration from [OSINT-Assistant](https://github.com/AXRoux/OSINT-Assistant) repository
+- **Terminal UI Design**: Cyberpunk aesthetics and dark web styling by [Lincoln Paul](https://github.com/lincolnpauldev-Eng)
+- **Workflow Visualization**: Process diagrams by [Chintan Gurjar](https://www.linkedin.com/in/chintangurjar)
+- **Community**: Thanks to all contributors and the cybersecurity research community
 
 
 
